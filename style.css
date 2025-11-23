@@ -1,11 +1,23 @@
-body {
-    background-color: rgb(24, 24, 24);
-    color: white;
+:root {
+    --bg: rgb(24, 24, 24);
+    --text: white;
+    --hover: rgb(75, 75, 75);
+    --hover-element: rgb(210, 210, 210);
+    --border: rgba(255, 255, 255, 0.3);
 }
 
+body {
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+/* Colors for light mode */
 .light-mode {
-    background-color: white;
-    color: rgb(41, 41, 41);
+    --bg: white;
+    --text: rgb(41, 41, 41);
+    --hover: rgb(241, 241, 241);
+    --hover-element: rgb(86, 86, 86);
+    --border: rgba(104, 104, 104, 0.3);
 }
 
 /* Top Navigation Bar */
@@ -23,7 +35,7 @@ body {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid var(--border);
     
     /* Font */
     font-family: "Raleway", sans-serif;
@@ -32,14 +44,51 @@ body {
     font-style: normal;
 }
 
+/* Theme toggle */
+#theme-switch {
+    border: none;
+    outline: none;
+
+    height: 2rem;
+    width: 2rem;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--hover);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 10px;
+}
+
+#theme-switch:hover svg {
+    fill: var(--hover-element);
+}
+
+#theme-switch svg {
+    fill: var(--text);
+}
+
+#theme-switch svg:last-child {
+    display: none;
+}
+
+.light-mode #theme-switch svg:first-child {
+    display: none;
+}
+
+.light-mode #theme-switch svg:last-child {
+    display: block;
+}
+
 /* Links inside the navbar */
 .navbar span {
 
     font-size: 16px;
     text-align: center;
-    padding: 14px 16px;
+    padding: 14px 10px;
     border-radius: 16px;
-    margin: 0.2rem;
+    
     text-decoration: none;
 }
 
@@ -47,6 +96,7 @@ body {
 .linksDropdown {
     float: left;
     overflow: hidden;
+    
 }
 
 /* Dropdown button */
@@ -57,7 +107,8 @@ body {
     color: inherit;
     font-size: 16px;
     text-align: center;
-    padding: 14px 16px;
+    
+    padding: 14px 10px;
     border-radius: 16px;
     margin: 0.2rem;
     text-decoration: none;
@@ -70,7 +121,7 @@ body {
 
 /* Navbar elements hover effect */
 .navbar span:hover, .linksDropdown:hover .linksDropButton {
-    background-color: rgb(75, 75, 75);
+    background-color: var(--hover);
 }
 
 /* Dropdown content (hidden by default) */
@@ -104,10 +155,10 @@ body {
 }
 
 /* Main body */
-.container {
+/*.container {
     
-    width: 80rem;
-}
+    width: 50rem;
+}*/
 
 .container h1 {
     /* Font */
@@ -127,6 +178,89 @@ body {
 
 .projectShowcase {
     display: grid;
-    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+    gap: 20px;
     justify-content: center;
+    max-width: 300px;
+}
+
+/* Medium screens (e.g., Tablets, small laptops) */
+@media (min-width: 600px) {
+  .projectShowcase {
+    /* Changes to 2 equal-width columns */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 620px;
+  }
+}
+
+/* Large screens (e.g., Desktops) */
+@media (min-width: 992px) {
+  .projectShowcase {
+    /* Changes back to the desired 3 equal-width columns */
+    grid-template-columns: repeat(3, 1fr);
+    /* You can optionally re-introduce a max-width if you want the grid to stop growing */
+    gap: 20px;
+    max-width: 940px;
+    /*margin: 0 auto; /* Center the entire grid container */
+  }
+}
+
+.project {
+    /* Fixed dimensions */
+    width: 300px;
+    height: 100px;
+    
+    /* Enables positioning of the text overlay */
+    position: relative;
+    /* Ensures the content (image) doesn't overflow the fixed dimensions */
+    overflow: hidden;
+    /* Optional: Adds a subtle shadow for depth */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Smooth transition for the hover effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+
+    border-radius: 0.8rem;
+}
+
+.project img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 50%;
+}
+
+.project-name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.project-description {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+/* Hover Effect */
+.project:hover {
+  transform: translateY(-5px);
+  /* Enhances the shadow */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project:hover .project-name {
+    opacity: 0;
+}
+
+.project:hover .project-description {
+    opacity: 1;
+}
+
+.project:hover img {
+    opacity: 25%;
 }
