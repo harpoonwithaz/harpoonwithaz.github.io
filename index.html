@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Github Pages</title>
+</head>
+<body>
+    <div class="navbar">
+        <button onclick="toggleLight()">light</button>
+        <span>Home</span>
+        <span>About</span>
+        <div class="linksDropdown">
+            <button class="linksDropButton">Links
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="linksDropdownContent">
+                <a href="https://github.com/harpoonwithaz">Github</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h1>About Me</h1>
+        <h1>Notable Projects</h1>
+        <div class="projectShowcase">
+
+        </div>
+        
+    </div>
+
+    <script>
+        function toggleLight() {
+            var element = document.body;
+            element.classList.toggle("light-mode");
+        }
+    </script>
+
+</body>
+</html>

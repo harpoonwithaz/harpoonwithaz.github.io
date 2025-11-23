@@ -1,0 +1,132 @@
+body {
+    background-color: rgb(24, 24, 24);
+    color: white;
+}
+
+.light-mode {
+    background-color: white;
+    color: rgb(41, 41, 41);
+}
+
+/* Top Navigation Bar */
+.navbar {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Horizontally center */
+    align-items: center;    /* Vertically center */
+
+    /* Glass effect */
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    
+    /* Font */
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Links inside the navbar */
+.navbar span {
+
+    font-size: 16px;
+    text-align: center;
+    padding: 14px 16px;
+    border-radius: 16px;
+    margin: 0.2rem;
+    text-decoration: none;
+}
+
+/* The dropdown container */
+.linksDropdown {
+    float: left;
+    overflow: hidden;
+}
+
+/* Dropdown button */
+.linksDropdown .linksDropButton {
+    border: none;
+    outline: none;
+
+    color: inherit;
+    font-size: 16px;
+    text-align: center;
+    padding: 14px 16px;
+    border-radius: 16px;
+    margin: 0.2rem;
+    text-decoration: none;
+
+    background-color: inherit;
+    font-family: inherit; /* Important for vertical align on mobile phones */
+    font-weight: inherit;
+    margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Navbar elements hover effect */
+.navbar span:hover, .linksDropdown:hover .linksDropButton {
+    background-color: rgb(75, 75, 75);
+}
+
+/* Dropdown content (hidden by default) */
+.linksDropdownContent {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.linksDropdownContent a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.linksDropdownContent a:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.linksDropdown:hover .linksDropdownContent {
+    display: block;
+}
+
+/* Main body */
+.container {
+    
+    width: 80rem;
+}
+
+.container h1 {
+    /* Font */
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.container p {
+    /* Font */
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.projectShowcase {
+    display: grid;
+    grid-template-rows: auto;
+    justify-content: center;
+}
