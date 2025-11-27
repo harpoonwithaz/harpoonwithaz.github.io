@@ -10,7 +10,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
-    <script type="text/javascript" src="theme.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="script.js" defer></script>
     <title>Dev Portfolio</title>
 </head>
 <body>
@@ -32,15 +34,26 @@
         </div>
     </div>
     <div class="container">
-        <h1>About Me</h1>
-        <p>Hello, my name is Oliver. I am a first year CS student at Simon Fraser University, and I am interested in programming, front end development, and video editing. I am based in Vancouver British Columbia</p>
-        <h1>Notable Projects</h1>
-        <div class="projectShowcase">
+        <button class="collapsible active">About Me</button>
+        <div class="collapsible-content">
+            <p>Hello, my name is Oliver. I am a first year CS student at Simon Fraser University, and I am interested in programming, front end development, and video editing. I am based in Vancouver British Columbia</p>
+        </div>
+        <button class="collapsible active">Notable Projects</button>
+        <div class="collapsible-content projectShowcase">
             <div class="project">
                 <img src="\assets\wordle-solver.webp" alt="">
-                <div class="project-name">Wordle Solver</div>
-                <div class="project-description">hello</div>
-                <div class="project-blurb">Here is some text</div>
+                <div class="project-name" id="name">Wordle Solver</div>
+                <div class="project-name" id="desc">hello</div>
+                <div class="project-blurb">
+                    <span>
+                        <i class="fa-brands fa-python"></i>
+                        Python 3.13
+                    </span>
+                    <span>
+                        <i class="fa fa-github"></i>
+                        <a href="https://github.com/harpoonwithaz/wordle_solver/tree/main">Code</a>
+                    </span>
+                </div> 
             </div>
             <div class="project">Project2</div>
             <div class="project">Project3</div>

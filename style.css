@@ -94,13 +94,15 @@ body {
     border-radius: 16px;
     
     text-decoration: none;
+
+    transition: 0.2s ease-out;
 }
 
 /* The dropdown container */
 .linksDropdown {
     float: left;
     overflow: hidden;
-    
+    transition: 0.2s ease-out;
 }
 
 /* Dropdown button */
@@ -149,12 +151,13 @@ body {
 }
 
 /* The Underline Setup */
-.dropdown-link::after {
+a::after {
     content: '';
     position: absolute;
     width: 100%;
     transform: scaleX(0); /* Start hidden (scaled to 0) */
     height: 2px; /* Thickness */
+    border-radius: 5rem;
     bottom: 0;
     left: 0;
     background-color: var(--accent); /* Outline color */
@@ -165,8 +168,9 @@ body {
 }
 
 /* The Hover Effect */
-.dropdown-link:hover::after {
+a:hover::after {
     transform: scaleX(0.8); /* Scale to full width */
+    cursor: pointer;
 }
 
 /* Show the dropdown menu on hover */
@@ -175,21 +179,66 @@ body {
     border-radius: 16px;
 }
 
-/* Main body */
-/*.container {
+.container {
     
-    width: 50rem;
-}*/
+    margin: 0 auto;      /* centers horizontally */
+    /*border: 1px solid #ccc;   /* Vertically center */
+    
+}
 
-.container h1 {
+/* Collapsible buttpm */
+.collapsible {
+    background-color: var(--bg);
+    cursor: pointer;
+    border: none;
+    outline: none;
+    text-align: left;
+
+    padding: 10px;
+    margin-top: 21.44px;
+    margin-bottom: 21.44px;
+    border-radius: 1rem;
+
     /* Font */
     font-family: "Raleway", sans-serif;
     font-optical-sizing: auto;
     font-weight: 600;
     font-style: normal;
+    font-size: 2em;
+    color: inherit;
+}
+
+/* If you want an effect for when its collapsed */
+/*.active, .collapsible:hover {
+  background-color: #555;
+} */
+
+.collapsible:hover {
+    background-color: var(--hover);
+}
+
+.collapsible:after {
+  content: '\002B';
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.collapsible-content {
+    max-height: 0;
+    overflow: hidden;
+    
+    
+    padding-inline: 10px;
+    transition: max-height 0.2s ease-out;
 }
 
 .container p {
+    margin: 0;
+
     /* Font */
     font-family: "Raleway", sans-serif;
     font-optical-sizing: auto;
@@ -201,92 +250,140 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
+
+    padding-inline: 10px;
     justify-content: center;
     max-width: 300px;
-
-    font-family: "TikTok Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 20px;
-
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 /* Medium screens (e.g., Tablets, small laptops) */
-@media (min-width: 600px) {
-  .projectShowcase {
-    /* Changes to 2 equal-width columns */
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    max-width: 620px;
-  }
+@media (min-width: 656px) {
+    .projectShowcase {
+        /* Changes to 2 equal-width columns */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        max-width: 620px;
+    }
+    .container {
+        width: 100%;
+        max-width: 640px;
+    }
 }
 
 /* Large screens (e.g., Desktops) */
 @media (min-width: 992px) {
-  .projectShowcase {
-    /* Changes back to the desired 3 equal-width columns */
-    grid-template-columns: repeat(3, 1fr);
-    /* You can optionally re-introduce a max-width if you want the grid to stop growing */
-    gap: 20px;
-    max-width: 940px;
-    /*margin: 0 auto; /* Center the entire grid container */
-  }
+    .projectShowcase {
+        /* Changes back to the desired 3 equal-width columns */
+        grid-template-columns: repeat(3, 1fr);
+        /* You can optionally re-introduce a max-width if you want the grid to stop growing */
+        gap: 20px;
+        max-width: 940px;
+        /*margin: 0 auto; /* Center the entire grid container */
+    }
+    .container {
+        width: 100%;          /* responsive */
+        max-width: 960px;    /* optional cap */
+    }
 }
 
 .project {
     /* Fixed dimensions */
     width: 300px;
-    height: 100px;
+    height: 150px;
     
+    border: 2px solid var(--border);
     /* Enables positioning of the text overlay */
     position: relative;
     /* Ensures the content (image) doesn't overflow the fixed dimensions */
     overflow: hidden;
-    /* Optional: Adds a subtle shadow for depth */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Smooth transition for the hover effect */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
+
+    /* Font */
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
 
     border-radius: 0.8rem;
+
+    transition: 0.3s ease-out;
 }
 
 .project img {
     width: 100%;
-    height: 100%;
+    height: 120px;
     object-fit: cover;
     opacity: 50%;
 }
 
 .project-name {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0%;
+    width: 300px;
+    height: 120px;
+
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center;    /* Vertically center */
+    
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: bold;
+    font-size: 25px;
+
+    text-shadow: 1px 1px 2px var(--bg);
 }
 
-.project-description {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+#desc {
     opacity: 0;
+}
+
+.project-blurb {
+    position: absolute;
+    top: 120px;
+    width: 280px;
+    height: 30px;
+
+    margin-left: 10px;
+    margin-right: 10px;
+
+    font-weight: 400;
+    font-style: normal;
+
+    text-shadow: none;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    /* Vertically center */
+    
+}
+
+.project-blurb i {
+    color: var(--text);
+    text-decoration: none;
+}
+
+.project-blurb a {
+    text-decoration: none;
+    color: var(--text); /* Sets your static color */
+    font-family: inherit;
+    
+    display: inline-block; 
+    position: relative; 
 }
 
 /* Hover Effect */
 .project:hover {
-  transform: translateY(-5px);
+  /*transform: translateY(-5px);*/
+  border-color: var(--text);
   /* Enhances the shadow */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.project:hover .project-name {
+.project:hover #name {
     opacity: 0;
 }
 
-.project:hover .project-description {
+.project:hover #desc {
     opacity: 1;
 }
 
