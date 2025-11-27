@@ -335,6 +335,9 @@ a:hover::after {
 
 #desc {
     opacity: 0;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
 }
 
 .project-blurb {
