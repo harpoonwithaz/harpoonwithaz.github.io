@@ -183,7 +183,6 @@ a:hover::after {
     
     margin: 0 auto;      /* centers horizontally */
     /*border: 1px solid #ccc;   /* Vertically center */
-    
 }
 
 /* Collapsible buttpm */
@@ -336,8 +335,7 @@ a:hover::after {
 #desc {
     opacity: 0;
     font-size: 15px;
-    display: flex;
-    justify-content: center;
+    text-align: center;
 }
 
 .project-blurb {
