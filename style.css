@@ -102,7 +102,7 @@ body {
 .linksDropdown {
     float: left;
     overflow: hidden;
-    transition: 0.2s ease-out;
+    
 }
 
 /* Dropdown button */
@@ -123,6 +123,8 @@ body {
     font-family: inherit; /* Important for vertical align on mobile phones */
     font-weight: inherit;
     margin: 0; /* Important for vertical align on mobile phones */
+
+    transition: 0.2s ease-out;
 }
 
 /* Navbar elements hover effect */
