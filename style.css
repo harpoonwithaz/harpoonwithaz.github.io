@@ -27,10 +27,13 @@ body {
 .navbar {
     position: sticky;
     top: 0;
+    z-index: 1000;
     display: flex;
     flex-direction: row;
     justify-content: center; /* Horizontally center */
     align-items: center;    /* Vertically center */
+
+    margin: 10px;
 
     /* Glass effect */
     background: rgba(255, 255, 255, 0.05);
@@ -184,7 +187,12 @@ a:hover::after {
 .container {
     
     margin: 0 auto;      /* centers horizontally */
+    padding-inline: 20px;
     /*border: 1px solid #ccc;   /* Vertically center */
+}
+
+.container p {
+    font-size: 2rem;
 }
 
 /* Collapsible buttpm */
@@ -252,45 +260,47 @@ a:hover::after {
     grid-template-columns: 1fr;
     gap: 20px;
 
-    padding-inline: 10px;
+    padding-inline: 0px;
     justify-content: center;
-    max-width: 300px;
+    width: 100%;
+    max-width: 324px;
+    margin: 0 auto;
 }
 
 /* Medium screens (e.g., Tablets, small laptops) */
-@media (min-width: 656px) {
+@media (min-width: 710px) {
     .projectShowcase {
         /* Changes to 2 equal-width columns */
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
-        max-width: 620px;
+        max-width: 680px;
     }
     .container {
         width: 100%;
-        max-width: 640px;
+        max-width: 720px;
     }
 }
 
 /* Large screens (e.g., Desktops) */
-@media (min-width: 992px) {
+@media (min-width: 1070px) {
     .projectShowcase {
         /* Changes back to the desired 3 equal-width columns */
         grid-template-columns: repeat(3, 1fr);
         /* You can optionally re-introduce a max-width if you want the grid to stop growing */
         gap: 20px;
-        max-width: 940px;
+        max-width: 1040px;
         /*margin: 0 auto; /* Center the entire grid container */
     }
     .container {
         width: 100%;          /* responsive */
-        max-width: 960px;    /* optional cap */
+        max-width: 1040px;    /* optional cap */
     }
 }
 
 .project {
     /* Fixed dimensions */
-    width: 300px;
-    height: 150px;
+    width: 320px;
+    height: 280px;
     
     border: 2px solid var(--border);
     /* Enables positioning of the text overlay */
@@ -311,7 +321,7 @@ a:hover::after {
 
 .project img {
     width: 100%;
-    height: 120px;
+    height: 135px;
     object-fit: cover;
     opacity: 50%;
 }
@@ -319,35 +329,71 @@ a:hover::after {
 .project-name {
     position: absolute;
     top: 0%;
-    width: 300px;
-    height: 120px;
+    width: 320px;
+    height: 135px;
 
     display: flex;
     justify-content: center; /* Horizontally center */
     align-items: center;    /* Vertically center */
     
+    color: white;
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: bold;
     font-size: 25px;
 
-    text-shadow: 1px 1px 2px var(--bg);
+    text-shadow: 1px 1px 2px rgb(24, 24, 24);
 }
 
-#desc {
-    opacity: 0;
-    font-size: 15px;
-    text-align: center;
-}
-
-.project-blurb {
+.project-desc {
     position: absolute;
-    top: 120px;
-    width: 280px;
-    height: 30px;
+    top: 168px;
+    width: 300px;
+    height: 105px;
+    
+    margin: 8px;
+    padding-inline: 4px;
+    
+    font-size: 13px;
+    line-height: 1.4;
+    text-align: left;
+    font-weight: 400;
+    
+    color: var(--text);
+    opacity: 0.85;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
-    margin-left: 10px;
-    margin-right: 10px;
+.project-source {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.project-source a {
+    text-decoration: none;
+    color: var(--text);
+    display: inline-block;
+    position: relative;
+}
+
+.project-tags {
+    position: absolute;
+    top: 135px;
+    width: 300px;
+    height: 25px;
+
+    gap: 5px;
+
+    margin: 8px;
 
     font-weight: 400;
     font-style: normal;
@@ -355,23 +401,59 @@ a:hover::after {
     text-shadow: none;
     
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
     align-items: center;    /* Vertically center */
     
 }
 
-.project-blurb i {
-    color: var(--text);
-    text-decoration: none;
-}
-
-.project-blurb a {
+.project-tags a {
     text-decoration: none;
     color: var(--text); /* Sets your static color */
     font-family: inherit;
     
     display: inline-block; 
     position: relative; 
+}
+
+#py {
+    background-color: #c0a02d;
+    color: #fff8da;
+}
+
+#cpp {
+    background-color: #004482;
+    color: #beddff;
+}
+
+#codecrafters {
+    background-color: rgb(0, 95, 90);
+    color: rgb(240, 253, 250);
+}
+
+.project-tag {
+    display: flex;
+    align-items: center;
+    /* Vertically centers children */
+    justify-content: center;
+
+    /* Adds space between the icon and text */
+    gap: 2px;
+
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+
+    border-color: var(--border);
+    border-width: 1px;
+    border-style: solid;
+
+    font-weight: bold;
+    font-size: 0.65rem;
+    line-height: 0.9rem;
+    border-radius: 5rem;
+    white-space: nowrap;
 }
 
 /* Hover Effect */
@@ -382,13 +464,6 @@ a:hover::after {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.project:hover #name {
-    opacity: 0;
-}
-
-.project:hover #desc {
-    opacity: 1;
-}
 
 .project:hover img {
     opacity: 25%;

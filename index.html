@@ -10,8 +10,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
     <script type="text/javascript" src="script.js" defer></script>
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <title>Dev Portfolio</title>
@@ -29,47 +32,51 @@
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="linksDropdownContent">
-                <a href="https://github.com/harpoonwithaz" class="dropdown-link">Github</a>
-                <a href="#" class="dropdown-link">LinkedIn</a>
+                <a href="https://github.com/harpoonwithaz" class="dropdown-link" target="_blank">Github</a>
+                <a href="#" class="dropdown-link" target="_blank">LinkedIn</a>
             </div>
         </div>
     </div>
     <div class="container">
         <button class="collapsible active">About Me</button>
         <div class="collapsible-content">
-            <p>Hello, my name is Oliver. I am a first year CS student at Simon Fraser University, and I am interested in programming, and video editing. I am based in Vancouver British Columbia.</p>
+            <p>Hello, my name is <b>Oliver.</b></p>
+            <p>I am a first year Computer Science student focused on building practical software projects. Interested in systems, tooling, and solving real problems in code.</p>
         </div>
         <button class="collapsible active">Notable Projects</button>
         <div class="collapsible-content projectShowcase">
             <div class="project">
                 <img src="\assets\wordle-solver.webp" alt="">
-                <div class="project-name" id="name">Wordle Solver</div>
-                <div class="project-name" id="desc">Solves the wordle puzzle in under 5 turns by pruning possible words based on guess feedback.</div>
-                <div class="project-blurb">
-                    <span>
-                        <i class="fa-brands fa-python"></i>
-                        Python 3.13
-                    </span>
-                    <span>
-                        <i class="fa fa-github"></i>
-                        <a href="https://github.com/harpoonwithaz/wordle_solver/tree/main">Code</a>
-                    </span>
-                </div> 
+                <div class="project-name">Wordle Solver</div>
+                <div class="project-tags">
+                    <div class="project-tag" id="py">
+                        <i class="devicon-python-plain"></i>Python
+                    </div>
+                </div>
+                <div class="project-desc">A Python-based solver that uses word elimination strategies to find optimal Wordle solutions efficiently.
+                </div>
+                <div class="project-source">
+                    <i class="devicon-github-original"></i>
+                    <a href="https://github.com/harpoonwithaz/wordle_solver/tree/main"  target="_blank">Code</a>
+                </div>
             </div>
             <div class="project">
                 <img src="\assets\codecrafters-shell.png" alt="">
-                <div class="project-name" id="name">Shell</div>
-                <div class="project-name" id="desc">Fully functional shell implemented in C++ with various built-in commands including echo, cd, history, etc.</div>
-                <div class="project-blurb">
-                    <span>
-                        <i class="fa-brands fa-python"></i>
+                <div class="project-name">Shell</div>
+                <div class="project-tags">
+                    <div class="project-tag" id="cpp">
+                        <i class="devicon-cplusplus-plain"></i>
                         C++
-                    </span>
-                    <span>
-                        <i class="fa fa-github"></i>
-                        <a href="https://github.com/harpoonwithaz/codecrafters-shell-cpp">Code</a>
-                    </span>
-                </div> 
+                    </div>
+                    <div class="project-tag" id="codecrafters">
+                        Codecrafters
+                    </div>
+                </div>
+                <div class="project-desc">A fully functional Unix shell implementation built in C++, supporting piping, redirections, and custom commands.</div>
+                <div class="project-source">
+                    <i class="devicon-github-original"></i>
+                    <a href="https://github.com/harpoonwithaz/codecrafters-shell-cpp" target="_blank">Code</a>
+                </div>
             </div>
             <div class="project">Project3</div>
             <div class="project">Project4</div>
