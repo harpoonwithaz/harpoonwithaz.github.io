@@ -300,7 +300,7 @@ a:hover::after {
 .project {
     /* Fixed dimensions */
     width: 320px;
-    height: 280px;
+    height: 300px;
     
     border: 2px solid var(--border);
     /* Enables positioning of the text overlay */
@@ -429,6 +429,16 @@ a:hover::after {
 #codecrafters {
     background-color: rgb(0, 95, 90);
     color: rgb(240, 253, 250);
+}
+
+#node-js {
+    background-color: #82CD28;
+    color: #005c00;
+}
+
+#github-actions {
+    background-color: #222;
+    color: #fff;
 }
 
 .project-tag {
