@@ -441,6 +441,16 @@ a:hover::after {
     color: #fff;
 }
 
+#go {
+    background-color: #00ADD8;
+    color: #f8feff;
+}
+
+#svelte {
+    background-color: #FF3E00;
+    color: #ffffff;
+}
+
 .project-tag {
     display: flex;
     align-items: center;
