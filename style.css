@@ -1,11 +1,12 @@
 :root {
     --bg: rgb(24, 24, 24);
+    /* --button-bg: rgb(29, 29, 29); */
     --text: white;
     --hover: rgb(75, 75, 75);
     --hover-element: rgb(210, 210, 210);
     --border: rgba(255, 255, 255, 0.3);
     --shadow: rgba(255, 255, 255, 0.15);
-    --accent: rgb(0, 140, 255);
+    --accent: rgb(116, 192, 255);
 }
 
 body {
@@ -21,6 +22,7 @@ body {
     --hover-element: rgb(86, 86, 86);
     --border: rgba(104, 104, 104, 0.3);
     --shadow: rgba(0, 0, 0, 0.15);
+    --accent: rgb(0, 140, 255);
 }
 
 /* Top Navigation Bar */
@@ -216,8 +218,8 @@ a:hover::after {
 }
 
 /* If you want an effect for when its collapsed */
-/*.active, .collapsible:hover {
-  background-color: #555;
+/* .active, .collapsible:hover {
+  background-color: var(--button-bg);
 } */
 
 .collapsible:hover {
@@ -241,6 +243,10 @@ a:hover::after {
     
     padding-inline: 10px;
     transition: max-height 0.2s ease-out;
+}
+
+.collapsible-content a {
+    color: var(--accent);
 }
 
 .container p {
